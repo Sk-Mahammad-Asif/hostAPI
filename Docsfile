@@ -1,0 +1,131 @@
+/***************************************** First Video start********************************************* */
+
+// First -- > create a folder like RESSTAPI_BUILDING type
+
+// Second --> Open in VS editior mode.
+
+//Third --> open VS Code Terminal and type command -->  { $ npm init -y }  -->craete package.json file.
+
+//Fourth --> In this terminal write command --> { $ npm i express } --> installing backend as framework -->package-json.lock
+
+//Fifth --> create a new file like -->  { app.js }
+
+//sixth --> Inside app.js file write this code to check connection created or not.
+
+                /*const express = require("express");
+                const app = express();
+
+                const PORT = process.env.PORT || 5000;
+
+                app.get("/", (req, res) => {
+                    res.send("Hi, I am Live ");
+                });
+
+                const start = async() => {
+                    try{
+                        app.listen(PORT, () => {
+                        console.log(`${PORT} Yes I am Connected`);
+                        });
+                    }catch(error){
+                        console.log(error);
+                    }
+                };
+
+                start();*/
+
+
+//seventh --> Inside package.json in script body  write     
+                   /* "start": "node app.js",
+                    "dev": "nodemon app.js"*/
+
+//eighth --> Install nodemon write cmd { $ npm i nodemon } 
+
+
+//Ninth -->  in cmd write {$ npm run dev} backend connected.
+
+/***************************************** First Video end**********************************************/
+
+
+
+
+
+/***************************************** Second Video start**********************************************/
+
+//First-- > create a new folder name routes /or in cmd types {$ mkdir routes}
+
+//Second-- > create a new folder name controllers /or in cmd types {$ mkdir controllers}
+
+//third-- >Inside routes folder create products.js /or in cmd types {$ cd routes, $ echo > products.js}
+
+// cd ..
+
+//fourth-- >Inside controller folder create products.js /or in cmd types {$ cd controller, $ echo > products.js}
+
+//fifth --> Define  products.js file inside routes folder
+
+          /*  const express = require("express");
+            const router = express.Router();
+            const {getAllProducts, getAllProductsTesting,} = require("../controllers/products");
+
+            //define routes
+            //for fethcing data home page
+            router.route("/").get(getAllProducts);
+            //for testing purpose use POSTMAN API Testing.
+            router.route("/testing").get(getAllProductsTesting);
+
+
+
+            module.exports = router;
+
+//sixth --> Define  products.js file inside controller folder
+
+            const getAllProducts = async(req, res) => {
+                res.status(200).json({msg : "Hello I am getting all products" });
+            };
+
+            const getAllProductsTesting = async(req, res) => {
+                res.status(200).json({msg : "Hello I am getAllProductsTesting" });
+            };
+
+            module.exports = {getAllProducts, getAllProductsTesting};
+
+//seventh -->inside app.js file set middlewire and paths
+            
+                const express = require("express");
+                const app = express();
+
+                const PORT = process.env.PORT || 5000;
+
+                //this line added
+                const products_routes = require("./routes/products");
+
+                app.get("/", (req, res) => {
+                    res.send("Hi, I am Live ");
+                });
+
+                //middlewire or set routers // this line added
+                app.use("/api/products", products_routes);
+
+                const start = async() => {
+                    try{
+                        app.listen(PORT, () => {
+                        console.log(`${PORT} Yes I am Connected`);
+                        });
+                    }catch(error){
+                        console.log(error);
+                    }
+                };
+
+                start();
+
+// eighth- done to check url like --> http://localhost:5000/api/products
+ /*output--     {
+                    "msg": "Hello I am getting all products"
+                }*/
+
+            
+
+
+
+/***************************************** Second Video end************************************************/
+
