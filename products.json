@@ -1,3 +1,4 @@
+//parsing our manual data from this JSON format.
 [
     {
         "name" : "iphone",
