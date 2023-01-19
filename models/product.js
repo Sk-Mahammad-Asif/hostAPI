@@ -1,5 +1,7 @@
 const  mongoose = require('mongoose');
 
+
+//define schema here how my data and datatype store in MongoDB.
 const productSchema = new mongoose.Schema({
     name: {
         type: String,
